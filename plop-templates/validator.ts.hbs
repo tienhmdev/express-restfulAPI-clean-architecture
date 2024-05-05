@@ -4,11 +4,11 @@ import { validationHelper } from "../utils/helpers";
 const validationRules = [
     body('email')
         .trim()
-        .isEmpty()
+        .notEmpty()
         .withMessage('Email invalid.'),
     body('password')
         .trim()
-        .isEmpty()
+        .notEmpty()
         .withMessage('Field required.'),
 ]
 
