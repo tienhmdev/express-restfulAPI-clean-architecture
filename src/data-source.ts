@@ -5,6 +5,7 @@ import { UserMeta } from "./models/user-meta.entity";
 import { Permission } from "./models/permission.entity";
 import { Address } from "./models/address.entity";
 import { RelUserPermission } from "./models/rel-user-permission.entity";
+/* Do not remove this lines of comment */
 /* Import new entity */
 
 const AppDataSource = new DataSource({
@@ -22,6 +23,7 @@ const AppDataSource = new DataSource({
     Permission,
     Address,
     RelUserPermission,
+    /* Do not remove this lines of comment */
     /* Add new entity */
   ],
   migrations: ["src/migrations/**/*.ts"],
@@ -35,6 +37,7 @@ export class Entities {
   static repoAddress = AppDataSource.getRepository(Address);
   static repoPermission = AppDataSource.getRepository(Permission);
   static repoUserMeta = AppDataSource.getRepository(UserMeta);
+  /* Do not remove this lines of comment */
   /* Define new repository */
 }
 

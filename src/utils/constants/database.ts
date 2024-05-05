@@ -4,6 +4,7 @@ export const TABLE = {
   address: "dtb_addresses",
   permission: "mtb_permissions",
   relUserPermission: "rel_user_permission",
+  /* Do not remove this lines of comment */
   /* Define new table name */
 } as const;
 
