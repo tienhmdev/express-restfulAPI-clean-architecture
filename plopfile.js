@@ -18,31 +18,31 @@ module.exports = plop => {
                 type: 'add',
                 path: 'src/controllers/{{dashCase name}}.controller.ts',
                 templateFile:
-                    'plop-templates/api-module/controller.ts.hbs',
+                    'plop-templates/controller.ts.hbs',
             },
             {
                 type: 'add',
                 path: 'src/services/{{dashCase name}}.service.ts',
                 templateFile:
-                    'plop-templates/api-module/service.ts.hbs',
+                    'plop-templates/service.ts.hbs',
             },
             {
                 type: 'add',
                 path: 'src/middleware/{{dashCase name}}.middleware.ts',
                 templateFile:
-                    'plop-templates/api-module/middleware.ts.hbs',
+                    'plop-templates/middleware.ts.hbs',
             },
             {
                 type: 'add',
                 path: 'src/routes/{{dashCase name}}.router.ts',
                 templateFile:
-                    'plop-templates/api-module/router.ts.hbs',
+                    'plop-templates/router.ts.hbs',
             },
             {
                 type: 'add',
                 path: 'src/validations/{{dashCase name}}.validator.ts',
                 templateFile:
-                    'plop-templates/api-module/validator.ts.hbs',
+                    'plop-templates/validator.ts.hbs',
             },
             {
                 type: 'append',

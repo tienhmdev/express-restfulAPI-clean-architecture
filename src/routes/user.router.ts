@@ -1,5 +1,5 @@
 import express from "express";
-import { UserController } from "../controllers/category.controller";
+import { UserController } from "../controllers/user.controller";
 import { queryMetaValidator } from "../validations/common/meta.validator";
 import { authenticated } from "../middleware/common/authen.middleware";
 import { querySearchValidator } from "../validations/common/search.validator";
