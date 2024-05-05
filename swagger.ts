@@ -17,7 +17,7 @@ export const swaggerConfigs = {
         },
     },
     baseDir: __dirname,
-    filesPattern: './src/routes/*.ts',
+    filesPattern: ['./src/routes/*.ts', './src/types/swagger-schemas.ts'],
     swaggerUIPath: '/swagger',
     swaggerUiOptions: {
         explorer: true,
