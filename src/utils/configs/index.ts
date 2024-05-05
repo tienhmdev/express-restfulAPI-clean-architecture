@@ -11,5 +11,5 @@ export const ServerConfigs = {
   DS_PASSWORD: process.env.DS_PASSWORD ?? "--missing / src/utils/config--",
   DS_DATABASE: process.env.DS_DATABASE ?? "--missing / src/utils/config--",
   DS_LOGGING: Boolean(process.env.DS_LOGGING ?? "false"),
-  API_VERSION: +(process.env.DS_USERNAME ?? "1"),
+  API_VERSION: (process.env.API_VERSION ?? "v1"),
 };
