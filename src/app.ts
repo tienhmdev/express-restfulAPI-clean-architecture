@@ -4,6 +4,8 @@ import appDataSource from "./data-source";
 import bodyParser from "body-parser";
 import "./utils/extensions";
 import { ServerConfigs } from "./utils/configs";
+import expressJSDocSwagger from 'express-jsdoc-swagger';
+import { swaggerConfigs } from "../swagger";
 
 // Function to initialize the server
 const initServer = async () => {
@@ -15,6 +17,10 @@ const initServer = async () => {
     // Setup routing.
     routerSetup(app);
     console.log("✅ Routing has been initialized!");
+
+    // Load swagger.
+    expressJSDocSwagger(app)(swaggerConfigs);
+    console.log("✅ JS Doc Swagger has been initialized!");
 
     // Listen for requests on the configured port.
     app.listen(ServerConfigs.PORT, () => {
