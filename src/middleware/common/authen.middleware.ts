@@ -14,11 +14,17 @@ export const authenticated = (
 
   const tokenHeader = req.headers["authorization"];
   if (!tokenHeader)
-    return responseHelper.sendError({ res, code: httpStatusCodes.UNAUTHORIZED });
+    return responseHelper.sendError({
+      res,
+      code: httpStatusCodes.UNAUTHORIZED,
+    });
   const token = tokenHeader.split(" ")[1];
   const isValidToken = mockRootUser.access_token === token;
   if (!isValidToken)
-    return responseHelper.sendError({ res, code: httpStatusCodes.UNAUTHORIZED });
+    return responseHelper.sendError({
+      res,
+      code: httpStatusCodes.UNAUTHORIZED,
+    });
 
   console.log(`ミ Access Granted: ${token}🌲`);
 

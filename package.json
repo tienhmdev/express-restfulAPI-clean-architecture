@@ -12,7 +12,7 @@
     "prettify": "prettier --write",
     "format": "npm run format:js && npm run format:json && npm run format:md && npm run format:ts",
     "format:js": "prettier --write \"src/**/*.ts\"",
-    "format:json": "prettier --write \"src/**/*.json\"",
+    "format:json": "prettier --write \"**/*.json\"",
     "format:md": "prettier --write \"**/*.md\"",
     "format:ts": "prettier --write \"src/**/*.ts{,x}\""
   },
