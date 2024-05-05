@@ -1,10 +1,20 @@
 import { {{pascalCase name}}Service } from '../services/{{dashCase name}}.service';
 import { AppRequest, AppResponse } from '../types/express';
+import { StatusCode } from '../utils/constants/statusCode';
+import { responseHelper } from '../utils/helpers';
 
 export class {{pascalCase name}}Controller {
   
-  public static {{camelCase name}} = (req: AppRequest, res: AppResponse) => {
-    const data = {{pascalCase name}}Service.{{camelCase name}}(req);
-    res.send(data);
+  public static {{camelCase name}}s = async (req: AppRequest, res: AppResponse) => {
+    try {
+      const { data, metadata } = await {{pascalCase name}}Service.{{camelCase name}}s(req);
+      responseHelper.sendCollection(res, data, metadata);
+    } catch (error) {
+      responseHelper.sendError({
+        res,
+        code: StatusCode.INTERNAL_SERVER_ERROR,
+        cause: error,
+      });
+    }
   };
 }

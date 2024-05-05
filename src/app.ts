@@ -4,7 +4,7 @@ import appDataSource from "./data-source";
 import bodyParser from "body-parser";
 import "./utils/extensions";
 import { ServerConfigs } from "./utils/configs";
-import expressJSDocSwagger from 'express-jsdoc-swagger';
+import expressJSDocSwagger from "express-jsdoc-swagger";
 import { swaggerConfigs } from "../swagger";
 
 // Function to initialize the server

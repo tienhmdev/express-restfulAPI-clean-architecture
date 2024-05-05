@@ -18,15 +18,13 @@ import { {{camelCase name}}ReqValidator } from '../validations/{{dashCase name}}
  * }
  * @example response - 400 - example error response
  * {
- *   "message": "Failed to save song because you did not specify a title",
- *   "errCode": "EV121"
- * }
- * @example response - 500 - example error response
- * {
- *   "message": "Failed to save song because you  did not specify a title",
- *   "errCode": "EV121"
+ *     "message": "Not Found",
+ *     "cause": {
+ *         "fromDev": "Don't worry, we're fixing this. Please try again after some time."
+ *     },
+ *     "code": 400
  * }
  */
-{{camelCase name}}Router.post('/{{dashCase name}}', [...{{camelCase name}}ReqValidator, isEmail], {{pascalCase name}}Controller.{{camelCase name}});
+{{camelCase name}}Router.post('/{{dashCase name}}', [...{{camelCase name}}ReqValidator, isEmail], {{pascalCase name}}Controller.{{camelCase name}}s);
 
 export default {{dashCase name}}Router;

@@ -1,4 +1,3 @@
-
 /** Login Body */
 /**
  * @typedef {object} LoginBody

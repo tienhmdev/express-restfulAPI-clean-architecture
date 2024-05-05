@@ -1,11 +1,15 @@
-import { AppRequest } from '../types/express';
+import { SearchRequest } from "../types/request";
+
 export class {{pascalCase name}}Service {
-  public static {{camelCase name}} = (request: AppRequest) => {
-    console.log(request.body);
-    return {
-      name: 'TienHM',
-      age: '18',
-      address: 'Vietnam',
-    };
+  public static {{camelCase name}}s = (request: SearchRequest) => {
+    const { query } = request;
+    const result = [
+      {
+        name: "Name",
+        age: "18",
+        address: "Vietnam",
+      },
+    ];
+    return { data: result, metadata: { ...query?.metadata, total: 1 } };
   };
 }
