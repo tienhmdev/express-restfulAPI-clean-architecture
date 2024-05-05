@@ -1,0 +1,11 @@
+import { AppRequest } from '../types/express';
+export class {{pascalCase name}}Service {
+  public static {{camelCase name}} = (request: AppRequest) => {
+    console.log(request.body);
+    return {
+      name: 'TienHM',
+      age: '18',
+      address: 'Vietnam',
+    };
+  };
+}

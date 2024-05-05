@@ -1,0 +1,32 @@
+import express from 'express';
+import { {{pascalCase name}}Controller } from '../controllers/{{dashCase name}}.controller';
+const {{camelCase name}}Router = express.Router();
+import { isEmail } from '../middleware/{{dashCase name}}.middleware';
+import { {{camelCase name}}ReqValidator } from '../validations/{{dashCase name}}.validator';
+
+/**
+ * POST /api/v1/{{dashCase name}}/{{dashCase name}}
+ * @tags {{pascalCase group}}/{{pascalCase name}}Controller
+ * @summary This is the summary of the endpoint
+ * @param {LoginRequest} request.body.required - Login User
+ * @return {object} 200 - Success Response Token
+ * @return {object} 400 - Login Validate Fail Response
+ * @return {object} 500 - Internal Error Response
+ * @example response - 200 - example success response
+ * {
+ *   "message": "You have added a song!"
+ * }
+ * @example response - 400 - example error response
+ * {
+ *   "message": "Failed to save song because you did not specify a title",
+ *   "errCode": "EV121"
+ * }
+ * @example response - 500 - example error response
+ * {
+ *   "message": "Failed to save song because you  did not specify a title",
+ *   "errCode": "EV121"
+ * }
+ */
+{{camelCase name}}Router.post('/{{dashCase name}}', [...{{camelCase name}}ReqValidator, isEmail], {{pascalCase name}}Controller.{{camelCase name}});
+
+export default {{dashCase name}}Router;

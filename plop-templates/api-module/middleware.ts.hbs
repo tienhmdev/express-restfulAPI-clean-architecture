@@ -1,0 +1,6 @@
+import { NextFunction, Request } from "express";
+import { AppNextFunction, AppRequest, AppResponse } from "../types/express";
+
+export const isEmail = (req: AppRequest, res: AppResponse, next: AppNextFunction) => {
+  next();
+}

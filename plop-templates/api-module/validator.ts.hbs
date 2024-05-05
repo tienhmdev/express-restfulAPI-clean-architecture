@@ -1,0 +1,16 @@
+import { body } from "express-validator";
+import { validationHelper } from "../utils/helpers";
+
+const validationRules = [
+    body('email')
+        .trim()
+        .isLength({ min: 100, max: 200 })
+        .isEmail()
+        .withMessage('Email invalid.'),
+    body('password')
+        .trim()
+        .isEmpty()
+        .withMessage('Field required.'),
+]
+
+export const {{camelCase name}}ReqValidator = [...validationRules, validationHelper.check()]

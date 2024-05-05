@@ -1,0 +1,45 @@
+{
+  "name": "vincent-express-api-system",
+  "version": "1.0.0",
+  "description": "vincent-express-api-system",
+  "main": "index.js",
+  "scripts": {
+    "dev": "kill $(lsof -t -i:3000) & nodemon ./src/app.ts",
+    "gen:flop": "plop",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/**/*.{ts,tsx}",
+    "lint:fix": "npm run lint -- --fix",
+    "prettify": "prettier --write",
+    "format": "npm run format:js && npm run format:json && npm run format:md && npm run format:ts",
+    "format:js": "prettier --write \"src/**/*.ts\"",
+    "format:json": "prettier --write \"src/**/*.json\"",
+    "format:md": "prettier --write \"**/*.md\"",
+    "format:ts": "prettier --write \"src/**/*.ts{,x}\""
+  },
+  "dependencies": {
+    "@types/express-serve-static-core": "^4.17.41",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "body-parser": "^1.20.2",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.17.1",
+    "express-validator": "^7.0.1",
+    "pg": "^8.11.3",
+    "postgres": "^3.4.3",
+    "typeorm": "^0.3.17"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/express": "^4.17.6",
+    "@types/node": "20.10.4",
+    "@types/nodemon": "^1.19.0",
+    "@types/pg": "^8.10.9",
+    "eslint": "^8.57.0",
+    "nodemon": "^3.0.2",
+    "plop": "^4.0.0",
+    "prettier": "^3.2.5",
+    "ts-node": "10.9.2",
+    "typescript": "^5.3.2"
+  }
+}

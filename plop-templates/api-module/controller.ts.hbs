@@ -1,0 +1,10 @@
+import { {{pascalCase name}}Service } from '../services/{{dashCase name}}.service';
+import { AppRequest, AppResponse } from '../types/express';
+
+export class {{pascalCase name}}Controller {
+  
+  public static {{camelCase name}} = (req: AppRequest, res: AppResponse) => {
+    const data = {{pascalCase name}}Service.{{camelCase name}}(req);
+    res.send(data);
+  };
+}
