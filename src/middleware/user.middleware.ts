@@ -1,7 +1,7 @@
 import { AppNextFunction, AppRequest, AppResponse } from "../types/express";
 import { Entities } from "../data-source";
 import { responseHelper } from "../utils/helpers";
-import { StatusCode } from "../utils/constants/statusCode";
+import { httpStatusCodes } from "../utils/constants/httpStatusCodes";
 
 export const isUserIdExisted = async (
   req: AppRequest,
@@ -10,9 +10,9 @@ export const isUserIdExisted = async (
 ) => {
   const userId = req?.params?.id;
   if (!userId)
-    return responseHelper.sendError({ res, code: StatusCode.NOT_FOUND });
+    return responseHelper.sendError({ res, code: httpStatusCodes.NOT_FOUND });
   const user = await Entities.repoUser.findOne({ where: { id: userId } });
   if (!user)
-    return responseHelper.sendError({ res, code: StatusCode.NOT_FOUND });
+    return responseHelper.sendError({ res, code: httpStatusCodes.NOT_FOUND });
   next();
 };

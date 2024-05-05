@@ -1,16 +1,16 @@
 import { ErrorResponse } from "../../types/error";
 import { AppResponse } from "../../types/express";
-import { ErrorMessages } from "../constants/errorMessages";
-import { StatusCode } from "../constants/statusCode";
+import { httpMessages } from "../constants/httpMessages";
+import { httpStatusCodes } from "../constants/httpStatusCodes";
 
 export const sendObject = (res: AppResponse, data: any) => {
-  res.status(StatusCode.OK).json({
+  res.status(httpStatusCodes.OK).json({
     data,
   });
 };
 
 export const sendCollection = (res: AppResponse, data: any, meta: any) => {
-  res.status(StatusCode.OK).json({
+  res.status(httpStatusCodes.OK).json({
     data,
     meta,
   });
@@ -21,7 +21,7 @@ export const sendError = ({ res, code, message, cause }: ErrorResponse) => {
     status: res.status,
     message:
       message ??
-      ErrorMessages?.[code] ??
+      httpMessages?.[code] ??
       `Don't worry, we're fixing this. Please try again after some time.`,
     cause: Object.keys(cause ?? {}).length || {
       fromDev: `Don't worry, we're fixing this. Please try again after some time.`,

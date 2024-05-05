@@ -1,6 +1,6 @@
 import { UserService } from "../services/user.service";
 import { AppRequest, AppResponse } from "../types/express";
-import { StatusCode } from "../utils/constants/statusCode";
+import { httpStatusCodes } from "../utils/constants/httpStatusCodes";
 import { responseHelper } from "../utils/helpers";
 
 export class UserController {
@@ -11,7 +11,7 @@ export class UserController {
     } catch (error) {
       responseHelper.sendError({
         res,
-        code: StatusCode.INTERNAL_SERVER_ERROR,
+        code: httpStatusCodes.INTERNAL_SERVER_ERROR,
         cause: error,
       });
     }
@@ -24,7 +24,7 @@ export class UserController {
     } catch (error) {
       responseHelper.sendError({
         res,
-        code: StatusCode.INTERNAL_SERVER_ERROR,
+        code: httpStatusCodes.INTERNAL_SERVER_ERROR,
         cause: error,
       });
     }

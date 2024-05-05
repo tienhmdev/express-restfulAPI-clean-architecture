@@ -2,7 +2,7 @@ import { AppNextFunction, AppRequest, AppResponse } from "../../types/express";
 import { DatabaseConstant } from "../../utils/constants";
 import { MetaDataDefault } from "../../types/request";
 import { responseHelper } from "../../utils/helpers";
-import { StatusCode } from "../../utils/constants/statusCode";
+import { httpStatusCodes } from "../../utils/constants/httpStatusCodes";
 import { mockRootUser } from "../../mocks/user";
 
 export const authenticated = (
@@ -14,11 +14,11 @@ export const authenticated = (
 
   const tokenHeader = req.headers["authorization"];
   if (!tokenHeader)
-    return responseHelper.sendError({ res, code: StatusCode.UNAUTHORIZED });
+    return responseHelper.sendError({ res, code: httpStatusCodes.UNAUTHORIZED });
   const token = tokenHeader.split(" ")[1];
   const isValidToken = mockRootUser.access_token === token;
   if (!isValidToken)
-    return responseHelper.sendError({ res, code: StatusCode.UNAUTHORIZED });
+    return responseHelper.sendError({ res, code: httpStatusCodes.UNAUTHORIZED });
 
   console.log(`ミ Access Granted: ${token}🌲`);
 

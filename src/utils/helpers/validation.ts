@@ -1,7 +1,7 @@
 import { validationResult } from "express-validator";
 import { AppNextFunction, AppRequest, AppResponse } from "../../types/express";
 import { responseHelper } from ".";
-import { StatusCode } from "../constants/statusCode";
+import { httpStatusCodes } from "../constants/httpStatusCodes";
 
 export const check = () => {
   return (req: AppRequest, res: AppResponse, next: AppNextFunction) => {
@@ -15,7 +15,7 @@ export const check = () => {
         ) {
           return responseHelper.sendError({
             res,
-            code: StatusCode.BAD_REQUEST,
+            code: httpStatusCodes.BAD_REQUEST,
             message: errors.errors.shift().msg,
             cause: errors.errors,
           });
@@ -25,7 +25,7 @@ export const check = () => {
     } catch (err) {
       return responseHelper.sendError({
         res,
-        code: StatusCode.BAD_REQUEST,
+        code: httpStatusCodes.BAD_REQUEST,
         message: "Unknown validation error!",
       });
     }
