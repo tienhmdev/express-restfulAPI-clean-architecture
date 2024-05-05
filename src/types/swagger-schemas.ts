@@ -1,9 +1,8 @@
-/** Login Body */
+/** Login Request */
 /**
- * @typedef {object} LoginBody
+ * @typedef {object} LoginRequest
  * @property {string} email.required
  * @property {string} password.required
- * @property {number} remember_me
  */
 
 /** Login Guest Body */
