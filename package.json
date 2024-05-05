@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "vincent-express-api-system",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "kill $(lsof -t -i:3000) & nodemon ./src/app.ts",
     "gen:flop": "plop",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint src/**/*.{ts,tsx}",
+    "lint": "eslint src/**/*.ts",
     "lint:fix": "npm run lint -- --fix",
     "prettify": "prettier --write",
     "format": "npm run format:js && npm run format:json && npm run format:md && npm run format:ts",
@@ -23,6 +24,7 @@
     "body-parser": "^1.20.2",
     "crypto": "^1.0.1",
     "dotenv": "^16.4.5",
+    "eslint-plugin-unused-imports": "^3.2.0",
     "express": "^4.17.1",
     "express-jsdoc-swagger": "^1.8.0",
     "express-validator": "^7.0.1",
@@ -36,11 +38,12 @@
     "@types/node": "20.10.4",
     "@types/nodemon": "^1.19.0",
     "@types/pg": "^8.10.9",
-    "eslint": "^8.57.0",
+    "eslint": "8.57.0",
     "nodemon": "^3.0.2",
     "plop": "^4.0.0",
     "prettier": "^3.2.5",
     "ts-node": "10.9.2",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.2",
+    "typescript-eslint": "^7.8.0"
   }
 }
