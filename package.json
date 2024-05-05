@@ -9,7 +9,7 @@
     "gen:flop": "plop",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/**/*.ts",
-    "lint:fix": "npm run lint -- --fix",
+    "lint:fix": "eslint src/**/*.ts --fix",
     "prettify": "prettier --write",
     "format": "npm run format:js && npm run format:json && npm run format:md && npm run format:ts",
     "format:js": "prettier --write \"src/**/*.ts\"",
@@ -19,8 +19,6 @@
   },
   "dependencies": {
     "@types/express-serve-static-core": "^4.17.41",
-    "@typescript-eslint/eslint-plugin": "^6.12.0",
-    "@typescript-eslint/parser": "^6.12.0",
     "body-parser": "^1.20.2",
     "crypto": "^1.0.1",
     "dotenv": "^16.4.5",
@@ -33,17 +31,18 @@
     "typeorm": "^0.3.17"
   },
   "devDependencies": {
+    "@eslint/js": "^9.2.0",
     "@types/body-parser": "^1.19.5",
     "@types/express": "^4.17.6",
     "@types/node": "20.10.4",
     "@types/nodemon": "^1.19.0",
     "@types/pg": "^8.10.9",
-    "eslint": "8.57.0",
+    "eslint": "^9.2.0",
     "nodemon": "^3.0.2",
     "plop": "^4.0.0",
     "prettier": "^3.2.5",
     "ts-node": "10.9.2",
-    "typescript": "^5.3.2",
+    "typescript": "^5.4.5",
     "typescript-eslint": "^7.8.0"
   }
 }
