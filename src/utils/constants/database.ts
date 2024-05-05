@@ -4,6 +4,7 @@ export const TABLE = {
   address: "dtb_addresses",
   permission: "mtb_permissions",
   relUserPermission: "rel_user_permission",
+  /* Define new table name */
 } as const;
 
 export const DefaultLimit = 20 as const;

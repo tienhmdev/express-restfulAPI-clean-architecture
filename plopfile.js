@@ -57,5 +57,52 @@ module.exports = plop => {
                 template: `appRouter.use('/{{dashCase name}}', {{camelCase name}}Router);`,
             }
         ],
-    })
+    });
+    plop.setGenerator('Database Schema', {
+        description: 'Create Database Schema',
+        prompts: [
+            {
+                type: 'input',
+                name: 'entity',
+                message: 'What is entity name (ex. HotelRoom)?'
+            },
+            {
+                type: 'input',
+                name: 'table',
+                message: 'What is table name (ex. hotel_rooms, without dtb_)?'
+            },
+        ],
+        actions: [
+            {
+                type: 'add',
+                path: 'src/models/{{dashCase entity}}.entity.ts',
+                templateFile:
+                    'plop-templates/database.entity.ts.hbs',
+            },
+            {
+                type: 'append',
+                path: 'src/utils/constants/database.ts',
+                pattern: `/* Define new table name */`,
+                template: `  {{camelCase entity}}: "dtb_{{snakeCase table}}",`,
+            },
+            {
+                type: 'append',
+                path: 'src/data-source.ts',
+                pattern: `/* Import new entity */`,
+                template: `import { {{pascalCase entity}} } from "./models/{{dashCase entity}}.entity";`,
+            },
+            {
+                type: 'append',
+                path: 'src/data-source.ts',
+                pattern: `/* Add new entity */`,
+                template: `    {{pascalCase entity}},`,
+            },
+            {
+                type: 'append',
+                path: 'src/data-source.ts',
+                pattern: `/* Define new repository */`,
+                template: `  static repo{{pascalCase entity}} = AppDataSource.getRepository({{pascalCase entity}});`,
+            }
+        ],
+    });
 };

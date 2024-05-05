@@ -1,0 +1,36 @@
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  BaseEntity,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from "typeorm";
+import { DatabaseConstant } from "../utils/constants";
+
+@Entity(DatabaseConstant.TABLE.{{camelCase entity}})
+export class {{pascalCase entity}} extends BaseEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column()
+  not_nullable: string;
+
+  @Column({ nullable: true })
+  nullable: number;
+
+  @CreateDateColumn({
+    type: "timestamp",
+    default: () => "CURRENT_TIMESTAMP(6)",
+    name: "created_at",
+  })
+  created_at: Date;
+
+  @UpdateDateColumn({
+    type: "timestamp",
+    default: () => "CURRENT_TIMESTAMP(6)",
+    onUpdate: "CURRENT_TIMESTAMP(6)",
+    name: "updated_at",
+  })
+  updated_at: Date;
+}
