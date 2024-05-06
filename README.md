@@ -3,6 +3,8 @@
 ## Description
 
 vincent-express-api-system
+![image](https://github.com/tienhmdev/express-restfulAPI-clean-architecture/assets/60764040/6422988e-11d2-448d-938a-bc79918ca14c)
+
 
 ## Installation
 
