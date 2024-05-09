@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "kill $(lsof -t -i:3000) & nodemon ./src/app.ts",
     "build": "tsc --outDir build",
-    "start": "node build/app.js",
+    "start": "node ./build/app.js",
     "gen:flop": "plop",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/**/*.ts",
