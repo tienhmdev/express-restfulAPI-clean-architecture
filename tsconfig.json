@@ -4,8 +4,9 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
+    "module": "commonjs",
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
+    "noEmit": false,
     "esModuleInterop": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -13,7 +14,9 @@
     "incremental": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
   },
   "exclude": ["node_modules"],
   "include": ["**/*.ts"]

@@ -5,7 +5,7 @@ import bodyParser from "body-parser";
 import "./utils/extensions";
 import { ServerConfigs } from "./utils/configs";
 import expressJSDocSwagger from "express-jsdoc-swagger";
-import { swaggerConfigs } from "../swagger";
+import { swaggerConfigs } from "./swagger";
 
 // Function to initialize the server
 const initServer = async () => {

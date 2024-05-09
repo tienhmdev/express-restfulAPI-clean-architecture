@@ -1,10 +1,12 @@
 # npm
 .history
+build
 node_modules
 package-lock.json
 yarn.lock
 *.log
 *.gz
+tsconfig.tsbuildinfo
 
 # Coveralls
 .nyc_output
