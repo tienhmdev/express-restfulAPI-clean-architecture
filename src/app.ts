@@ -13,6 +13,7 @@ const initServer = async () => {
     const app = express();
     console.log("✅ Body-parser middleware has been initialized!");
     app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(bodyParser.json());
 
     // Setup routing.
     routerSetup(app);

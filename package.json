@@ -27,6 +27,7 @@
     "express": "^4.17.1",
     "express-jsdoc-swagger": "^1.8.0",
     "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.2",
     "pg": "^8.11.3",
     "postgres": "^3.4.3",
     "typeorm": "^0.3.17"

@@ -23,7 +23,7 @@ export class Address extends BaseEntity {
 
   @ManyToOne(() => User, { eager: false, nullable: true })
   @JoinColumn({
-    name: "address_id",
+    name: "user_id",
     referencedColumnName: "id",
   })
   user: User;
